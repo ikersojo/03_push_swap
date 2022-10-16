@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/15 22:55:04 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/16 10:51:31 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ t_intlst	*ft_intlst_new(int value);
 t_intlst	*ft_intlst_last(t_intlst *lst);
 void		ft_intlst_addback(t_intlst **lst, t_intlst *new);
 void		ft_intlst_free(t_intlst **lst);
-void		ft_intlst_print(t_intlst **lst);
+void		ft_intlst_print(t_intlst *lst);
 t_intlst	*ft_args_to_intlst(int argc, char **argv);
 
 #endif
