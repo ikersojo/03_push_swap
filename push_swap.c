@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/16 10:50:59 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:13:10 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ INSTRUCTIONS:
   The last element becomes the first one.
 - rrr : rra and rrb at the same time.
 */
+
+void	ft_intlst_swap_next(t_intlst **a)
+{
+	t_intlst	*tmp;
+
+	if (*a && (*a)->next)
+	{
+		tmp = *a;
+		*a = (*a)->next;
+		(*a)->next = tmp;
+		ft_putstr_fd("elements swapped\n", 1); // <--- DEBUG
+	}
+}
 
 static int	ft_repeated(int argc, char **argv, int i)
 {
@@ -82,6 +95,8 @@ int	main(int argc, char **argv)
 		if (ft_input_error(argc, argv))
 			return (0);
 		a = ft_args_to_intlst(argc, argv);
+		ft_intlst_print(a);
+		//ft_intlst_swap_next(&a);
 		ft_intlst_print(a);
 		ft_intlst_free(&a);
 	}
