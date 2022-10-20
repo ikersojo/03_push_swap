@@ -6,51 +6,91 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/16 21:13:10 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:13:43 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/inc/libft.h"
 
-/*
-INITIALIZE:
-- Read argument(s) to initalize stack a.
-- Initialize an empty stack b of the same size as a.
-
-INSTRUCTIONS:
-- sa (swap a): Swap the first 2 elements at the top of stack a. 
-  Do nothing if there is only one or no elements.
-- sb (swap b): Swap the first 2 elements at the top of stack b. 
-  Do nothing if there is only one or no elements.
-- ss : sa and sb at the same time.
-- pa (push a): Take first element at the top of b and put it at the top of a.
-  Do nothing if b is empty.
-- pb (push b): Take first element at the top of a and put it at the top of b.
-  Do nothing if a is empty.
-- ra (rotate a): Shift up all elements of stack a by 1.
-  The first element becomes the last one.
-- rb (rotate b): Shift up all elements of stack b by 1.
-  The first element becomes the last one.
-- rr : ra and rb at the same time.
-- rra (reverse rotate a): Shift down all elements of stack a by 1.
-  The last element becomes the first one.
-- rrb (reverse rotate b): Shift down all elements of stack b by 1.
-  The last element becomes the first one.
-- rrr : rra and rrb at the same time.
-*/
-
-void	ft_intlst_swap_next(t_intlst **a)
+void	ft_swap_nbr(int *a, int *b)
 {
-	t_intlst	*tmp;
+	int	temp;
 
-	if (*a && (*a)->next)
+	if (a && b)
 	{
-		tmp = *a;
-		*a = (*a)->next;
-		(*a)->next = tmp;
-		ft_putstr_fd("elements swapped\n", 1); // <--- DEBUG
+		temp = *a;
+		*a = *b;
+		*b = temp;
 	}
 }
+
+/*	sa (swap a):
+	Swap the first 2 elements at the top of stack a. 
+	Do nothing if there is only one or no elements. */
+void	sa(t_intlst **a)
+{
+	if (*a)
+	{
+		ft_swap_nbr(&((*a)->value), &(((*a)->next)->value));
+		ft_putstr_fd("sa\n", 1);
+	}
+}
+
+/*	sb (swap b):
+	Swap the first 2 elements at the top of stack b. 
+	Do nothing if there is only one or no elements. */
+void	sb(t_intlst **b)
+{
+	if (*b)
+	{
+		ft_swap_nbr(&((*b)->value), &(((*b)->next)->value));
+		ft_putstr_fd("sb\n", 1);
+	}
+}
+
+/*	ss : sa and sb at the same time. */
+void	ss(t_intlst **a, t_intlst **b)
+{
+	sa(a);
+	sb(b);
+	ft_putstr_fd("ss\n", 1);
+}
+
+/*	pa (push a): Take first element at the top of b and put it at the top of a.
+	Do nothing if b is empty. */
+void	pa(t_intlst **a, t_intlst **b)
+{
+	if (*a)
+	{
+		ft_intlst_addfront(&a, b);
+	}
+}
+
+/*	pb (push b): Take first element at the top of a and put it at the top of b.
+	Do nothing if a is empty. */
+// void	pb(t_intlst **a, t_intlst **b)
+
+/*	ra (rotate a): Shift up all elements of stack a by 1.
+	The first element becomes the last one. */
+// void	ra(t_intlst **a)
+
+/*	rb (rotate b): Shift up all elements of stack b by 1.
+	The first element becomes the last one. */
+// void	rb(t_intlst **b)
+
+/*	rr : ra and rb at the same time. */
+// void	rr(t_intlst **a, t_intlst **b)
+
+/*	rra (reverse rotate a): Shift down all elements of stack a by 1.
+	The last element becomes the first one. */
+// void	rra(t_intlst **a)
+
+/*	rrb (reverse rotate b): Shift down all elements of stack b by 1.
+	The last element becomes the first one. */
+// void	rrb(t_intlst **b)
+
+/*	rrr : rra and rrb at the same time. */
+// void	rrr(t_intlst **a, t_intlst **b)
 
 static int	ft_repeated(int argc, char **argv, int i)
 {
@@ -88,15 +128,16 @@ static int	ft_input_error(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_intlst	*a;
-	// t_intlst	*b;
+	t_intlst	*b;
 
 	if (argc > 2)
 	{
 		if (ft_input_error(argc, argv))
 			return (0);
 		a = ft_args_to_intlst(argc, argv);
+		b = NULL;
 		ft_intlst_print(a);
-		//ft_intlst_swap_next(&a);
+		ss(&a, &b);
 		ft_intlst_print(a);
 		ft_intlst_free(&a);
 	}
