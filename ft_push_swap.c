@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/25 08:14:55 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:32:42 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,59 +57,63 @@ int	main(int argc, char **argv)
 		a = ft_args_to_intlst(argc, argv);
 		b = NULL;
 
-		ft_putstr_fd("Initial lists:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		if (ft_intlst_issorted(a))
+			return (ft_putstr_fd("Sorted!\n", 1));
+		return (ft_putstr_fd("NOT Sorted!\n", 1));
 
-		ft_pb(&a, &b);
+		// ft_putstr_fd("Initial lists:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
+
+		// ft_pb(&a, &b);
 		
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 		
-		ft_pb(&a, &b);
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_pb(&a, &b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 
-		ft_ss(&a, &b);
+		// ft_ss(&a, &b);
 
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 
-		ft_rr(&a, &b);
+		// ft_rr(&a, &b);
 
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 
-		ft_pa(&b, &a);
+		// ft_pa(&b, &a);
 
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 
-		ft_rr(&b, &a);
+		// ft_rr(&b, &a);
 
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 		
 
-		ft_rrr(&b, &a);
+		// ft_rrr(&b, &a);
 
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
-		ft_intlst_print(b);
+		// ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("b:\n", 1);
+		// ft_intlst_print(b);
 
 
 
