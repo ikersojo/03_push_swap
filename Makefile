@@ -3,28 +3,30 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 16:19:35 by isojo-go          #+#    #+#              #
-#    Updated: 2022/10/04 10:14:01 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/10/25 08:13:29 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Key variable and files definitions:
 
-NAME = libftprintf.a
-LIBFT = libft/libft.a
+NAME		=	push_swap
+LIBFT		=	libft/libft.a
+INC_DIR		=	inc/
+SRC_DIR		=	src/
 
-CC = gcc
-CCFLAGS = -Wall -Wextra -Werror
+CC			=	gcc
+CCFLAGS		=	-Wall -Wextra -Werror
+RM			=	rm -f
 
-AR = ar rc
-RM = rm -f
+SRC_FILES	=	ft_push.c ft_swap.c ft_rotate.c ft_rev_rotate.c
 
-SRC =	ft_printf.c
-OBJ = 	$(SRC:.c=.o)
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ			= 	$(SRC:.c=.o)
 
-INCLUDE = ft_printf.h
+INCLUDE = $(addprefix $(INC_DIR), ft_push_swap.h)
 
 #Colors:
 
@@ -40,12 +42,11 @@ WHITE = \033[0;97m
 
 # **************************************************************************** #
 
-all:		$(LIBFT) $(NAME)
+all:		$(NAME)
 
-$(NAME):	$(OBJ)
-			@cp $(LIBFT) $(NAME)
-			@$(AR) $(NAME) $(OBJ)
-			@echo "$(GREEN)libftprintf compiled!$(DEF_COLOR)"
+$(NAME):	$(LIBFT) $(OBJ)
+			@$(CC) $(CCFLAGS) ft_push_swap.c $(OBJ) $(LIBFT) -I$(INCLUDE) -o $(NAME) # revisar
+			@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
 $(LIBFT):
 			@make -C ./libft
