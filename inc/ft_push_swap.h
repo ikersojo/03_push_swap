@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 07:40:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/25 07:57:59 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/25 20:28:25 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	ft_rr(t_intlst **a, t_intlst **b);
 void	ft_rra(t_intlst **a);
 void	ft_rrb(t_intlst **b);
 void	ft_rrr(t_intlst **a, t_intlst **b);
+void	ft_sort(t_intlst **a, t_intlst **b, int n);
 
 #endif
