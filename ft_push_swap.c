@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/29 09:24:55 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:37:26 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static int	ft_input_error(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_intlst	*a;
-	t_intlst	*b;
+	t_intlst		*a;
+	t_intlst		*b;
 
 	if (argc > 2)
 	{
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("-------\n\n", 1);
 
 		ft_putstr_fd("########################\n", 1);
-		ft_sort(&a, &b, argc);
+		ft_sort(&a, &b, argc - 1);
 		ft_putstr_fd("########################\n\n", 1);
 
 		ft_putstr_fd("a:\n-------\n", 1);
