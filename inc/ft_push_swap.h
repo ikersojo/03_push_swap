@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 07:40:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/25 20:28:25 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:51:33 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft/inc/libft.h"
 
-void	ft_pa(t_intlst **b, t_intlst **a);
+void	ft_pa(t_intlst **a, t_intlst **b);
 void	ft_pb(t_intlst **a, t_intlst **b);
 void	ft_sa(t_intlst **a);
 void	ft_sb(t_intlst **b);
@@ -27,5 +27,8 @@ void	ft_rra(t_intlst **a);
 void	ft_rrb(t_intlst **b);
 void	ft_rrr(t_intlst **a, t_intlst **b);
 void	ft_sort(t_intlst **a, t_intlst **b, int n);
+void	ft_sort_2(t_intlst **lst);
+void	ft_sort_3(t_intlst **lst);
+void	ft_sort_5(t_intlst **a, t_intlst **b, int n);
 
 #endif

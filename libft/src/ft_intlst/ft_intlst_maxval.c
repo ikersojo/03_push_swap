@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_intlst_maxval.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:55:08 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/29 17:13:36 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/29 16:43:26 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/29 16:45:11 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_push_swap.h"
+#include "../../inc/libft.h"
 
-void	ft_sort(t_intlst **a, t_intlst **b, int n)
+/* DESCRIPTION:
+Takes as a parameter the adress of the first element of a list of integers and
+returns the maximum value in the list.
+---------------------------------------------------------------------------- */
+int	ft_intlst_maxval(t_intlst *lst)
 {
-	if (!ft_intlst_issorted(*a))
+	int	max;
+
+	max = -2147483648;
+	while (lst)
 	{
-		if (n == 2)
-			ft_sort_2(a);
-		else if (n == 3)
-			ft_sort_3(a);
-		else if (n == 4 || n == 5)
-			ft_sort_5(a, b, n);
-		else
-			ft_putstr_fd("too many numbers!\n", 1);
+		if (lst->value > max)
+			max = lst->value;
+		lst = lst->next;
 	}
+	return (max);
 }

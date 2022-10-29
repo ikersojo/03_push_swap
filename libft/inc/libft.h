@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/25 16:32:12 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:54:27 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,7 @@ void		ft_intlst_free(t_intlst **lst);
 void		ft_intlst_print(t_intlst *lst);
 t_intlst	*ft_args_to_intlst(int argc, char **argv);
 int			ft_intlst_issorted(t_intlst *lst);
+int			ft_intlst_maxval(t_intlst *lst);
+int			ft_intlst_minval(t_intlst *lst);
 
 #endif

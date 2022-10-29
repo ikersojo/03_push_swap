@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_sort_2_3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:55:08 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/29 17:13:36 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/29 16:49:28 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/29 17:18:49 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_push_swap.h"
 
-void	ft_sort(t_intlst **a, t_intlst **b, int n)
+void	ft_sort_2(t_intlst **lst)
 {
-	if (!ft_intlst_issorted(*a))
+	if ((*lst)->value > (*lst)->next->value)
+		ft_sa(lst);
+}
+
+void	ft_sort_3(t_intlst **lst)
+{
+	int	a;
+	int	b;
+	int	c;
+
+	while (!ft_intlst_issorted(*lst))
 	{
-		if (n == 2)
-			ft_sort_2(a);
-		else if (n == 3)
-			ft_sort_3(a);
-		else if (n == 4 || n == 5)
-			ft_sort_5(a, b, n);
+		a = (*lst)->value;
+		b = (*lst)->next->value;
+		c = (*lst)->next->next->value;
+		if (a < c)
+			ft_sa(lst);
 		else
-			ft_putstr_fd("too many numbers!\n", 1);
+		{
+			if (b > a)
+				ft_rra(lst);
+			else
+				ft_ra(lst);
+		}
 	}
 }
