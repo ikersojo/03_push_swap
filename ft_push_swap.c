@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/25 21:40:52 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/29 09:24:55 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,23 @@ int	main(int argc, char **argv)
 		a = ft_args_to_intlst(argc, argv);
 		b = NULL;
 
-		ft_putstr_fd("Initial lists:\na:\n-------\n", 1);
+		ft_putstr_fd("a:\n-------\n", 1);
 		ft_intlst_print(a);
-		ft_putstr_fd("\nb:\n-------\n", 1);
+		ft_putstr_fd("-------\n\n", 1);
+		ft_putstr_fd("b:\n-------\n", 1);
 		ft_intlst_print(b);
+		ft_putstr_fd("-------\n\n", 1);
 
+		ft_putstr_fd("########################\n", 1);
 		ft_sort(&a, &b, argc);
+		ft_putstr_fd("########################\n\n", 1);
 
-		ft_putstr_fd("\n\nAfter mod:\na:\n", 1);
+		ft_putstr_fd("a:\n-------\n", 1);
 		ft_intlst_print(a);
-		ft_putstr_fd("b:\n", 1);
+		ft_putstr_fd("-------\n\n", 1);
+		ft_putstr_fd("b:\n-------\n", 1);
 		ft_intlst_print(b);
+		ft_putstr_fd("-------\n\n", 1);
 
 		ft_intlst_free(&a);
 		ft_intlst_free(&b);
