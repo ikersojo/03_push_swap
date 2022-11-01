@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 15:28:36 by isojo-go          #+#    #+#              #
-#    Updated: 2022/10/29 16:45:42 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/10/30 10:42:42 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_intlst/ft_intlst_new.c ft_intlst/ft_intlst_print.c \
 				ft_intlst/ft_intlst_before_last.c \
 				ft_intlst/ft_intlst_issorted.c ft_intlst/ft_intlst_minval.c\
-				ft_intlst/ft_intlst_maxval.c\
+				ft_intlst/ft_intlst_maxval.c ft_intlst/ft_intlst_size.c \
 
 SRC	=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ	=	$(SRC:.c=.o)

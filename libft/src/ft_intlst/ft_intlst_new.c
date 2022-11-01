@@ -6,12 +6,11 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:20:07 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/16 10:54:13 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/10/30 10:38:01 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
-#include <stdio.h>
 
 /* DESCRIPTION:
 Allocates (with malloc(3)) and returns a new element of integer list.

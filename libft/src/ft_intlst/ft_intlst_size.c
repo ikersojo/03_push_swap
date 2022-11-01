@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlst_print.c                                  :+:      :+:    :+:   */
+/*   ft_intlst_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 22:20:04 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/01 08:15:53 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/10/30 10:37:46 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/10/30 10:40:46 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
 /* DESCRIPTION:
-Takes as a parameter the adress of a pointer to the first element of a list of
-integers and prints all elements of the list.
+Takes as a parameter the pointer to the first element of a list of
+integers and return the size of the list (number of elements).
 ---------------------------------------------------------------------------- */
-void	ft_intlst_print(t_intlst *lst)
+unsigned int	ft_intlst_size(t_intlst *lst)
 {
-	t_intlst	*next_item;
-
+	unsigned int	size;
+	size = 0;
 	while (lst)
 	{
-		next_item = lst->next;
-		ft_putnbr_fd((lst->value), 1);
-		ft_putchar_fd(' - cost: ', 1); // DEBUG <--------
-		ft_putnbr_fd((lst->cost), 1); // DEBUG <--------
-		ft_putchar_fd('\n', 1);
-		lst = next_item;
+		size++;
+		lst = lst->next;
 	}
+	return (size);
 }
