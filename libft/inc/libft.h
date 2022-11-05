@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/30 10:42:48 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/05 09:33:06 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_intlst
 {
 	int				value;
 	struct s_intlst	*next;
+	int				src_pos_cost;
+	int				dst_pos_cost;
 	unsigned int	cost;
 }					t_intlst;
 
@@ -102,8 +104,9 @@ void			ft_intlst_free(t_intlst **lst);
 void			ft_intlst_print(t_intlst *lst);
 t_intlst		*ft_args_to_intlst(int argc, char **argv);
 int				ft_intlst_issorted(t_intlst *lst);
+int				ft_intlst_isrevsorted(t_intlst *lst);
 int				ft_intlst_maxval(t_intlst *lst);
 int				ft_intlst_minval(t_intlst *lst);
-unsigned int	ft_intlst_size(t_intlst *lst)
+unsigned int	ft_intlst_size(t_intlst *lst);
 
 #endif
