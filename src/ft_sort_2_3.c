@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 16:49:28 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/29 17:18:49 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/06 09:41:32 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,35 @@ void	ft_sort_3(t_intlst **lst)
 				ft_rra(lst);
 			else
 				ft_ra(lst);
+		}
+	}
+}
+
+void	ft_revsort_2(t_intlst **lst)
+{
+	if ((*lst)->value < (*lst)->next->value)
+		ft_sa(lst);
+}
+
+void	ft_revsort_3(t_intlst **lst) // Mejorar
+{
+	int	a;
+	int	b;
+	int	c;
+
+	while (!ft_intlst_isrevsorted(*lst))
+	{
+		a = (*lst)->value;
+		b = (*lst)->next->value;
+		c = (*lst)->next->next->value;
+		if (a > c)
+			ft_sb(lst);
+		else
+		{
+			if (b < a)
+				ft_rrb(lst);
+			else
+				ft_rb(lst);
 		}
 	}
 }
