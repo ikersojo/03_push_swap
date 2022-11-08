@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:55:08 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/07 20:51:09 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:13:26 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,74 +101,78 @@ void	ft_smart_rotate_b(t_intlst **lst, int cost)
 	}
 }
 
-void	ft_move_min(t_intlst **src, t_intlst **dst, unsigned int min)
+void	ft_move_min(t_intlst **a, t_intlst **b, unsigned int min)
 {
 	t_intlst	*tmp;
-	int			rotate_src;
-	int			rotate_dst;
+	int			rotate_a;
+	int			rotate_b;
 
-	tmp = *src;
+	tmp = *a;
 	while (tmp)
 	{
 		if (tmp->cost == min)
 		{
-			rotate_src = tmp->src_pos_cost;
-			rotate_dst = tmp->dst_pos_cost;
-			ft_smart_rotate_a(src, rotate_src);
-			ft_smart_rotate_b(dst, rotate_dst);
-			ft_pb(src, dst);
-			if ((*dst)->value < ft_intlst_last(*dst)->value)
-				ft_rrb(dst); // esta parte de aquí tengo que pulirla, cuando esté de humor...
-			// else
-			// 	ft_rrb(dst);
+			rotate_a = tmp->src_pos_cost;
+			rotate_b = tmp->dst_pos_cost;
+			ft_smart_rotate_a(a, rotate_a);
+			ft_smart_rotate_b(b, rotate_b);
+			ft_pb(a, b);
+			if ((*b)->value < (*b)->next->value)
+				ft_rb(b);
+			if ((*b)->value < ft_intlst_last(*b)->value)
+				ft_rrb(b);
 			return ;
 		}
 		tmp = tmp->next;
 	}
 }
 
-void ft_sort_big(t_intlst **a, t_intlst **b, int n)
+void	ft_max_first_b(t_intlst **lst)
 {
-	// t_intlst 		*tmp;
+	t_intlst 		*tmp;
+	unsigned int	current_pos;
+	unsigned int	size;
+	int				rotate;
+	int				max;
+
+	max = ft_intlst_maxval(*lst);
+	if (max == (*lst)->value)
+		return ;
+	size = ft_intlst_size(*lst);
+	current_pos = 0;
+	tmp = *lst;
+	while (tmp)
+	{
+		if (tmp->value == max)
+		{
+			if (current_pos < (size / 2 + 1))
+				rotate = current_pos;
+			else
+				rotate = current_pos - size;
+		}
+		current_pos++;
+		tmp = tmp->next;
+	}
+	ft_smart_rotate_b(lst, rotate);
+}
+
+void	ft_sort_big(t_intlst **a, t_intlst **b, int n)
+{
 	unsigned int	min;
 	unsigned int	i;
 
-	(void)n;
 	i = 3;
 	while (i--)
 		ft_pb(a, b);
 	ft_revsort_3(b);
 	while (*a)
 	{
-		ft_putstr_fd("a:\n-------\n", 1);
-		ft_intlst_print(*a);
-		ft_putstr_fd("-------\n\n", 1);
-		ft_putstr_fd("b:\n-------\n", 1);
-		ft_intlst_print(*b);
-		ft_putstr_fd("-------\n\n", 1);
-
 		min = ft_derive_cost(a, b);
 		ft_move_min(a, b, min);
 	}
-	// tmp = *a;
-	//while !(a lleno y b ordenado al reves)
-	// while (tmp)
-	// {
-	// 	if (tmp->cost == min)
-	// 	{
-	// 		rotate_src = tmp->src_pos_cost;
-	// 		rotate_dst = tmp->dst_pos_cost;
-	// 		while (rotate > 0)
-	// 		{
-	// 			if (tmp->rev == 0)
-	// 				ra(a);
-	// 			else
-	// 				rra(a);
-	// 		}
-	// 		pb(a, b);
-	// 	}
-	// 	tmp = tmp->next;
-	// }
+	ft_max_first_b(b);
+	while (n--)
+		ft_pa(a, b);
 }
 
 

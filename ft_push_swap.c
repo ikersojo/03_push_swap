@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/29 12:37:26 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:15:10 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,23 @@ int	main(int argc, char **argv)
 		a = ft_args_to_intlst(argc, argv);
 		b = NULL;
 
-		ft_putstr_fd("a:\n-------\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("-------\n\n", 1);
-		ft_putstr_fd("b:\n-------\n", 1);
-		ft_intlst_print(b);
-		ft_putstr_fd("-------\n\n", 1);
+		// ft_putstr_fd("a:\n-------\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("-------\n\n", 1);
+		// ft_putstr_fd("b:\n-------\n", 1);
+		// ft_intlst_print(b);
+		// ft_putstr_fd("-------\n\n", 1);
 
-		ft_putstr_fd("########################\n", 1);
+		// ft_putstr_fd("########################\n", 1);
 		ft_sort(&a, &b, argc - 1);
-		ft_putstr_fd("########################\n\n", 1);
+		// ft_putstr_fd("########################\n\n", 1);
 
-		ft_putstr_fd("a:\n-------\n", 1);
-		ft_intlst_print(a);
-		ft_putstr_fd("-------\n\n", 1);
-		ft_putstr_fd("b:\n-------\n", 1);
-		ft_intlst_print(b);
-		ft_putstr_fd("-------\n\n", 1);
+		// ft_putstr_fd("a:\n-------\n", 1);
+		// ft_intlst_print(a);
+		// ft_putstr_fd("-------\n\n", 1);
+		// ft_putstr_fd("b:\n-------\n", 1);
+		// ft_intlst_print(b);
+		// ft_putstr_fd("-------\n\n", 1);
 
 		ft_intlst_free(&a);
 		ft_intlst_free(&b);
