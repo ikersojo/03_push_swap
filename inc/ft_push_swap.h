@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 07:40:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/05 11:18:20 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:01:33 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ void	ft_sort_3(t_intlst **lst);
 void	ft_sort_5(t_intlst **a, t_intlst **b, int n);
 void	ft_revsort_2(t_intlst **lst);
 void	ft_revsort_3(t_intlst **lst);
+void	ft_visualize_stacks(t_intlst **a, t_intlst **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 16:49:28 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/06 09:41:32 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:16:06 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_revsort_2(t_intlst **lst)
 		ft_sa(lst);
 }
 
-void	ft_revsort_3(t_intlst **lst) // Mejorar
+void	ft_revsort_3(t_intlst **lst)
 {
 	int	a;
 	int	b;

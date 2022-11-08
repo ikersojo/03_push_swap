@@ -6,9 +6,13 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/08 18:15:10 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:43:07 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PRINT
+# define PRINT 0
+#endif
 
 #include "./inc/ft_push_swap.h"
 
@@ -56,25 +60,11 @@ int	main(int argc, char **argv)
 			return (0);
 		a = ft_args_to_intlst(argc, argv);
 		b = NULL;
-
-		// ft_putstr_fd("a:\n-------\n", 1);
-		// ft_intlst_print(a);
-		// ft_putstr_fd("-------\n\n", 1);
-		// ft_putstr_fd("b:\n-------\n", 1);
-		// ft_intlst_print(b);
-		// ft_putstr_fd("-------\n\n", 1);
-
-		// ft_putstr_fd("########################\n", 1);
+		if (PRINT)
+			ft_visualize_stacks(&a, &b);
 		ft_sort(&a, &b, argc - 1);
-		// ft_putstr_fd("########################\n\n", 1);
-
-		// ft_putstr_fd("a:\n-------\n", 1);
-		// ft_intlst_print(a);
-		// ft_putstr_fd("-------\n\n", 1);
-		// ft_putstr_fd("b:\n-------\n", 1);
-		// ft_intlst_print(b);
-		// ft_putstr_fd("-------\n\n", 1);
-
+		if (PRINT)
+			ft_visualize_stacks(&a, &b);
 		ft_intlst_free(&a);
 		ft_intlst_free(&b);
 	}
