@@ -6,11 +6,38 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:55:08 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/08 18:13:26 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:01:14 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_push_swap.h"
+
+int	ft_get_dstcost_max_first(t_intlst *lst)
+{
+	unsigned int	current_pos;
+	unsigned int	size;
+	int				rotate;
+	int				max;
+
+	max = ft_intlst_maxval(lst);
+	if (max == (lst)->value)
+		return (0);
+	size = ft_intlst_size(lst);
+	current_pos = 0;
+	while (lst)
+	{
+		if (lst->value == max)
+		{
+			if (current_pos < (size / 2 + 1))
+				rotate = current_pos;
+			else
+				rotate = current_pos - size;
+		}
+		current_pos++;
+		lst = lst->next;
+	}
+	return (rotate);
+}
 
 int	ft_get_dstcost(t_intlst *lst, int target)
 {
@@ -18,10 +45,10 @@ int	ft_get_dstcost(t_intlst *lst, int target)
 	unsigned int	current_pos;
 	unsigned int	size;
 
-	if (ft_intlst_maxval(lst) < target)
+	if (lst->value < target && ft_intlst_last(lst)->value > target)
 		return (0);
-	if (ft_intlst_minval(lst) > target)
-		return (0); // realmente es uno pero como lo uso de contador, lo dejo en cero mvtos
+	if ((ft_intlst_maxval(lst) < target) || (ft_intlst_minval(lst) > target))
+		return (ft_get_dstcost_max_first(lst));
 	size = ft_intlst_size(lst);
 	current_pos = 0;
 	cost = 0;
@@ -112,15 +139,14 @@ void	ft_move_min(t_intlst **a, t_intlst **b, unsigned int min)
 	{
 		if (tmp->cost == min)
 		{
+			// ft_printf("         %d\n", min); // DEBUG
 			rotate_a = tmp->src_pos_cost;
 			rotate_b = tmp->dst_pos_cost;
 			ft_smart_rotate_a(a, rotate_a);
 			ft_smart_rotate_b(b, rotate_b);
 			ft_pb(a, b);
-			if ((*b)->value < (*b)->next->value)
+			if (ft_intlst_minval(*b) == (*b)->value)
 				ft_rb(b);
-			if ((*b)->value < ft_intlst_last(*b)->value)
-				ft_rrb(b);
 			return ;
 		}
 		tmp = tmp->next;
