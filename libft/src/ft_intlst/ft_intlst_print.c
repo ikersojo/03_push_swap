@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:20:04 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/13 19:55:22 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/13 20:54:10 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	ft_intlst_print(t_intlst *lst)
 	{
 		next_item = lst->next;
 		ft_putnbr_fd((lst->value), 1);
-		ft_putstr_fd(" -> cost: ", 1); // DEBUG <--------
-		ft_putnbr_fd((lst->cost), 1); // DEBUG <--------
-		ft_putstr_fd(" -> src cost: ", 1); // DEBUG <--------
-		ft_putnbr_fd((lst->src_pos_cost), 1); // DEBUG <--------
-		ft_putstr_fd(" + push cost: 1 + dst cost: ", 1); // DEBUG <--------
-		ft_putnbr_fd((lst->dst_pos_cost), 1); // DEBUG <--------
+		// ft_putstr_fd(" -> cost: ", 1); // DEBUG <--------
+		// ft_putnbr_fd((lst->cost), 1); // DEBUG <--------
+		// ft_putstr_fd(" -> src cost: ", 1); // DEBUG <--------
+		// ft_putnbr_fd((lst->src_pos_cost), 1); // DEBUG <--------
+		// ft_putstr_fd(" + push cost: 1 + dst cost: ", 1); // DEBUG <--------
+		// ft_putnbr_fd((lst->dst_pos_cost), 1); // DEBUG <--------
 		ft_putchar_fd('\n', 1);
 		lst = next_item;
 	}
