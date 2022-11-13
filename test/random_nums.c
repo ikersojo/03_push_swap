@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:17:26 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/11 10:42:22 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/13 19:11:58 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	main(int argc, char **argv)
 		srand(time(NULL));
 		while (i < size)
 		{
-			num = (rand() - rand()) % 2147483647;
+			num = (rand() - rand()) % 10000;
 			while (ft_is_in_tab(tab, num, i))
-				num = (rand() - rand()) % 2147483647;
+				num = (rand() - rand()) % 10000;
 			*(tab + i) = num;
 			i++;
 		}

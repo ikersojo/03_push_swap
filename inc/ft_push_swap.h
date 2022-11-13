@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 07:40:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/08 21:01:33 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/13 19:27:18 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@ void	ft_rr(t_intlst **a, t_intlst **b);
 void	ft_rra(t_intlst **a);
 void	ft_rrb(t_intlst **b);
 void	ft_rrr(t_intlst **a, t_intlst **b);
+void	ft_smart_rotate_a(t_intlst **lst, int cost);
+void	ft_smart_rotate_b(t_intlst **lst, int cost);
 void	ft_sort(t_intlst **a, t_intlst **b, int n);
 void	ft_sort_2(t_intlst **lst);
 void	ft_sort_3(t_intlst **lst);
 void	ft_sort_5(t_intlst **a, t_intlst **b, int n);
+void	ft_sort_big(t_intlst **a, t_intlst **b, int n);
 void	ft_revsort_2(t_intlst **lst);
 void	ft_revsort_3(t_intlst **lst);
 void	ft_visualize_stacks(t_intlst **a, t_intlst **b);
