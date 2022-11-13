@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 19:24:07 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/13 19:27:43 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/13 20:06:35 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	ft_get_dstcost(t_intlst *lst, int target)
 		{
 			if (current_pos < ((size / 2) + 1))
 				return (cost);
-			return (current_pos - size);
+			return (current_pos - size + 1);
 		}
 		current_pos++;
 		lst = lst->next;
@@ -130,6 +130,7 @@ void	ft_sort_big(t_intlst **a, t_intlst **b, int n)
 	while (*a)
 	{
 		min = ft_derive_cost(a, b);
+		// ft_visualize_stacks(a, b); // DEBUG
 		ft_move_min(a, b, min);
 	}
 	ft_smart_rotate_b(b, ft_get_dstcost_max_first(*b));
