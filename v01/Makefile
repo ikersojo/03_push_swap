@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 16:19:35 by isojo-go          #+#    #+#              #
-#    Updated: 2022/11/13 19:25:03 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/11/13 20:56:20 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,14 @@ WHITE = \033[0;97m
 all:		$(NAME)
 
 $(NAME):	$(LIBFT) $(OBJ)
-			@$(CC) $(CCFLAGS) ft_push_swap.c $(OBJ) $(LIBFT) -I$(INCLUDE) -o $(NAME) # revisar
+			@$(CC) $(CCFLAGS) ft_push_swap.c $(OBJ) $(LIBFT) -I$(INC_DIR) -o $(NAME)
 			@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 
 $(LIBFT):
 			@make -C ./libft
 
 see:		$(LIBFT) $(OBJ)
-			@$(CC) $(CCFLAGS) ft_push_swap.c -D PRINT=1 $(OBJ) $(LIBFT) -I$(INCLUDE) -o $(NAME) # revisar
+			@$(CC) $(CCFLAGS) ft_push_swap.c -D PRINT=1 $(OBJ) $(LIBFT) -I$(INC_DIR) -o $(NAME)
 			@echo "$(GREEN)push_swap compiled!$(DEF_COLOR)"
 .c.o:
 			@echo "$(BLUE)Compiling: $< $(DEF_COLOR)"
