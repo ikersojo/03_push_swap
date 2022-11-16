@@ -6,17 +6,17 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:19:26 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/10/15 23:47:12 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/16 20:06:01 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-static void	init_params(unsigned int *n, unsigned int *i, int *sign)
+static void	init_params(unsigned int *n, int *sign, unsigned int *digits)
 {
 	*n = 0;
-	*i = 0;
 	*sign = 1;
+	*digits = 1;
 }
 
 /* DESCRIPTION:
@@ -26,24 +26,23 @@ Returns zero if the character tests false and returns non-zero if tests true.
 int	ft_isint(char *s)
 {
 	unsigned int	n;
-	unsigned int	i;
 	int				sign;
+	unsigned int	digits;
 
-	init_params(&n, &i, &sign);
-	if (*(s + i) == '+' || *(s + i) == '-')
+	init_params(&n, &sign, &digits);
+	if (*s == '+' || *s == '-')
 	{
-		if (*(s + i++) == '-')
+		if (*s++ == '-')
 			sign = -1;
 	}
-	while (*(s + i))
+	while (*s)
 	{
-		if (ft_isdigit(*(s + i)))
+		if (ft_isdigit(*s) && digits < 11 && n <= 214748364)
 		{
-			if (n >= 214748364 && (sign == -1 && *(s + i) > '8'))
+			if (n == 214748364 && (*s == '9' || (*s == '8' && sign == 1)))
 				return (0);
-			if (n >= 214748364 && (sign == 1 && *(s + i) > '7'))
-				return (0);
-			n = n * 10 + (*(s + i++) - '0');
+			n = n * 10 + (*s++ - '0');
+			digits++;
 		}
 		else
 			return (0);
