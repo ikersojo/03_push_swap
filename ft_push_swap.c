@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/16 20:09:08 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:44:29 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	main(int argc, char **argv)
 		ft_sort(&a, &b, argc - 1);
 		if (PR)
 			ft_visualize_stacks(&a, &b);
-		ft_free_all(&a, &b, to_be_freed, &argv);
 	}
+	ft_free_all(&a, &b, to_be_freed, &argv);
 	return (0);
 }
