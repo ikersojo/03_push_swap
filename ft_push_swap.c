@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/17 18:44:29 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:56:30 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	ft_string_to_args(char ***argv)
 	char	**arg_list;
 
 	str1 = ft_strjoin(*(*(argv) + 0), " ");
-	str2 = ft_strjoin(str1, *(*(argv) + 1));
+	str2 = ft_strjoin(str1, *(*(argv) + 1)); // MULTI ARG con while
 	arg_list = ft_split(str2, ' ');
 	free (str1);
 	free (str2);
@@ -87,7 +87,10 @@ int	main(int argc, char **argv)
 	int			to_be_freed;
 
 	to_be_freed = 0;
-	if (argc == 2)
+	if (argc == 2) 
+	// CORREGIR 1 UNICO INPUT malo
+	// AÑADIR MULTI CADENAS: " 2 3 4" " 3 4" 1"??
+	// 
 	{
 		argc = ft_string_to_args(&argv);
 		to_be_freed = argc;
