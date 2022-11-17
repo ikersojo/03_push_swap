@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/17 18:56:30 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:57:13 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	main(int argc, char **argv)
 	if (argc == 2) 
 	// CORREGIR 1 UNICO INPUT malo
 	// AÑADIR MULTI CADENAS: " 2 3 4" " 3 4" 1"??
-	// 
+	// RRR RR a la hora de mover 2
 	{
 		argc = ft_string_to_args(&argv);
 		to_be_freed = argc;
