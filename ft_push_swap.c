@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 20:32:38 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:45:15 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,15 @@ static int	ft_input_error(int argc, char **argv)
 	return (0);
 }
 
-static void	ft_free_all(t_intlst **a, t_intlst **b, int i, char ***argv)
+static int	ft_free_args(int i, char ***argv)
 {
-	ft_intlst_free(a);
-	ft_intlst_free(b);
 	if (i != 0)
 	{
 		while (i--)
 			free (*(*(argv) + i));
 		free (*argv);
 	}
+	return (2);
 }
 
 int	main(int argc, char **argv) // RRR RR a la hora de mover 2
@@ -70,9 +69,9 @@ int	main(int argc, char **argv) // RRR RR a la hora de mover 2
 	{
 		argc = ft_input_to_args(argc, &argv);
 		if (argc == 0)
-			return (1);
+			return (ft_free_args(argc + 1, &argv));
 		if (ft_input_error(argc, argv))
-			return (0);
+			return (ft_free_args(argc + 1, &argv));
 		a = ft_args_to_intlst(argc, argv);
 		b = NULL;
 		if (PR)
@@ -80,7 +79,9 @@ int	main(int argc, char **argv) // RRR RR a la hora de mover 2
 		ft_sort(&a, &b, argc - 1);
 		if (PR)
 			ft_visualize_stacks(&a, &b);
-		ft_free_all(&a, &b, argc + 1, &argv);
+		ft_intlst_free(&a);
+		ft_intlst_free(&b);
 	}
+	ft_free_args(argc + 1, &argv);
 	return (0);
 }
