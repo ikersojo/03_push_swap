@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 20:45:15 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:02:31 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	ft_free_args(int i, char ***argv)
 	return (2);
 }
 
-int	main(int argc, char **argv) // RRR RR a la hora de mover 2
+int	main(int argc, char **argv)
 {
 	t_intlst	*a;
 	t_intlst	*b;

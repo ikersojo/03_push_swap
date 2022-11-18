@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 16:19:35 by isojo-go          #+#    #+#              #
-#    Updated: 2022/11/18 20:30:51 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/11/18 22:58:12 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RM			=	rm -f
 
 SRC_FILES	=	ft_push.c ft_swap.c ft_rotate.c ft_rev_rotate.c ft_sort.c \
 				ft_sort_5.c ft_sort_2_3.c ft_visualize.c ft_smart_rotate.c \
-				ft_sort_big.c ft_input_to_args.c
+				ft_sort_big.c ft_input_to_args.c ft_sort_big_cost.c
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			= 	$(SRC:.c=.o)

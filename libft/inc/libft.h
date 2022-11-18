@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 19:29:55 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:49:29 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int			ft_isline(char *str);
 int			ft_isprint(char c);
 int			ft_isspace(int c);
 int			ft_isint(char *str);
+int			ft_is_samesign(int a, int b);
 
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_back(t_list **lst, t_list *new);
@@ -93,6 +94,7 @@ char		*ft_itoa(int n);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 int			ft_digitcount(unsigned long n, int base);
+int			ft_max(int a, int b);
 
 int			ft_printf(const char *str, ...);
 char		*ft_gnl(int fd);

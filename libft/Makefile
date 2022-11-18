@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 15:28:36 by isojo-go          #+#    #+#              #
-#    Updated: 2022/11/18 19:29:37 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/11/18 22:49:05 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ RM			=	rm -f
 SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_is/ft_isdigit.c ft_is/ft_isprint.c ft_is/ft_isspace.c \
 				ft_is/ft_ischarset.c ft_is/ft_isline.c ft_is/ft_isint.c \
+				ft_is/ft_is_samesign.c \
 				ft_lst/ft_lstnew.c ft_lst/ft_lstadd_front.c \
 				ft_lst/ft_lstsize.c ft_lst/ft_lstlast.c \
 				ft_lst/ft_lstadd_back.c ft_lst/ft_lstdelone.c \
@@ -42,7 +43,7 @@ SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_str/ft_strlcpy.c ft_str/ft_strlen.c ft_str/ft_strmapi.c \
 				ft_str/ft_strncmp.c ft_str/ft_strnstr.c ft_str/ft_strrchr.c \
 				ft_str/ft_strtrim.c ft_str/ft_substr.c ft_str/ft_strcat.c \
-				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c \
+				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c ft_to/ft_max.c \
 				ft_to/ft_toupper.c ft_to/ft_tolower.c ft_to/ft_digitcount.c\
 				ft_printf/ft_printf.c \
 				ft_gnl/ft_gnl.c \
