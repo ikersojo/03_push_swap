@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:19:26 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/16 20:06:01 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:07:08 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	init_params(unsigned int *n, int *sign, unsigned int *digits)
 {
 	*n = 0;
 	*sign = 1;
-	*digits = 1;
+	*digits = 0;
 }
 
 /* DESCRIPTION:
@@ -47,5 +47,7 @@ int	ft_isint(char *s)
 		else
 			return (0);
 	}
+	if (digits == 0)
+		return (0);
 	return (1);
 }

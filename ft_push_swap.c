@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+        */
+/*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/17 18:57:13 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:32:38 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,6 @@ static int	ft_input_error(int argc, char **argv)
 	return (0);
 }
 
-static int	ft_string_to_args(char ***argv)
-{
-	int		argc;
-	char	*str1;
-	char	*str2;
-	char	**arg_list;
-
-	str1 = ft_strjoin(*(*(argv) + 0), " ");
-	str2 = ft_strjoin(str1, *(*(argv) + 1)); // MULTI ARG con while
-	arg_list = ft_split(str2, ' ');
-	free (str1);
-	free (str2);
-	argc = 0;
-	while (*(arg_list + argc))
-		argc++;
-	*argv = arg_list;
-	return (argc);
-}
-
 static void	ft_free_all(t_intlst **a, t_intlst **b, int i, char ***argv)
 {
 	ft_intlst_free(a);
@@ -80,23 +61,16 @@ static void	ft_free_all(t_intlst **a, t_intlst **b, int i, char ***argv)
 	}
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv) // RRR RR a la hora de mover 2
 {
 	t_intlst	*a;
 	t_intlst	*b;
-	int			to_be_freed;
 
-	to_be_freed = 0;
-	if (argc == 2) 
-	// CORREGIR 1 UNICO INPUT malo
-	// AÑADIR MULTI CADENAS: " 2 3 4" " 3 4" 1"??
-	// RRR RR a la hora de mover 2
+	if (argc > 1)
 	{
-		argc = ft_string_to_args(&argv);
-		to_be_freed = argc;
-	}
-	if (argc > 2)
-	{
+		argc = ft_input_to_args(argc, &argv);
+		if (argc == 0)
+			return (1);
 		if (ft_input_error(argc, argv))
 			return (0);
 		a = ft_args_to_intlst(argc, argv);
@@ -106,7 +80,7 @@ int	main(int argc, char **argv)
 		ft_sort(&a, &b, argc - 1);
 		if (PR)
 			ft_visualize_stacks(&a, &b);
+		ft_free_all(&a, &b, argc + 1, &argv);
 	}
-	ft_free_all(&a, &b, to_be_freed, &argv);
 	return (0);
 }

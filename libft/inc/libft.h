@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/08 21:14:24 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 19:29:55 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim(const char *s1, const char *set);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
+char		*ft_strcat(char *dest, const char *src);
 
 int			ft_abs(int n);
 int			ft_atoi(const char *str);
