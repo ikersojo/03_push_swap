@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 23:02:31 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:14:23 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 			ft_visualize_stacks(&a, &b);
 		ft_intlst_free(&a);
 		ft_intlst_free(&b);
+		ft_free_args(argc + 1, &argv);
 	}
-	ft_free_args(argc + 1, &argv);
 	return (0);
 }
