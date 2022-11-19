@@ -106,6 +106,18 @@ A list of 3 elemnts can be sorted without the need of auxiliary stack b, with on
 ## Sorting 5 elements
 The strategy is to push the max and min elements to b, then sort the remaining 3 elemts on a, and push back max and min. when pushing back max, rotate it to the end.
 
+## Sorting more than 5 elements (named big in the src code)
+The strategy is as follows:
+1. Push the first 3 elements to b.
+2. Reverse-sort these 3 elements (the aim is to have all elements in b reverse sorted, to then push them back to a).
+3. Iterate until a is empty:
+	- Derive costs in the lements in a.
+	- Select the elemnet with the minimum cost
+	- Smart rotate the lists so that the selected element is at the top of a and b is ready to hold that elemnt in the correct location.
+	- Push to b.
+4. Once all elements are in b (reverse sorted), make sure that the max value is at the top of b.
+5. Push back all elements to a.
+
 
 # Extras
 Additional / auxiliary features have been build to help check the behaviour of the program
