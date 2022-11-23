@@ -6,7 +6,7 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:55:39 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/18 22:49:29 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:05:47 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
+
+# define RED "\033[0;31m"
+# define GREEN "\033[0;92m"
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -87,6 +90,7 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim(const char *s1, const char *set);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strcat(char *dest, const char *src);
+int			ft_strcmp(const char *s1, const char *s2);
 
 int			ft_abs(int n);
 int			ft_atoi(const char *str);

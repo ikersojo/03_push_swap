@@ -6,13 +6,13 @@
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:02:47 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/11 14:01:14 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/22 22:46:58 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_push_swap.h"
 
-static void	ft_intlst_push(t_intlst **src, t_intlst **dst)
+void	ft_intlst_push(t_intlst **src, t_intlst **dst)
 {
 	t_intlst	*temp;
 

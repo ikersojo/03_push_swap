@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   ft_push_swap_bonus.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 07:40:06 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/22 22:48:48 by isojo-go         ###   ########.fr       */
+/*   Updated: 2022/11/22 19:12:19 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#ifndef FT_PUSH_SWAP_BONUS_H
+# define FT_PUSH_SWAP_BONUS_H
 
 # include "../libft/inc/libft.h"
 
@@ -40,10 +40,6 @@ void			ft_visualize_stacks(t_intlst **a, t_intlst **b);
 int				ft_input_to_args(int argc, char ***argv);
 unsigned int	ft_derive_cost(t_intlst **src, t_intlst **dst);
 int				ft_get_dstcost_max_first(t_intlst *lst);
-int				ft_check(t_intlst **a, t_intlst **b);
-void			ft_intlst_push(t_intlst **src, t_intlst **dst);
-void			ft_intlst_reverse_rotate(t_intlst **lst);
-void			ft_intlst_rotate(t_intlst **lst);
-void			ft_intlst_swap(t_intlst **lst);
+void			ft_check(t_intlst **a, t_intlst **b);
 
 #endif

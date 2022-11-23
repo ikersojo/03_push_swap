@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*   ft_checker_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:38:30 by isojo-go          #+#    #+#             */
-/*   Updated: 2022/11/22 18:56:10 by isojo-go         ###   ########.fr       */
+/*   Created: 2022/11/22 19:00:42 by isojo-go          #+#    #+#             */
+/*   Updated: 2022/11/23 16:15:24 by isojo-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/ft_push_swap.h"
-
-#ifndef PR
-# define PR 0
-#endif
+#include "../inc/ft_push_swap.h"
 
 static int	ft_repeated(int argc, char **argv, int i)
 {
@@ -75,11 +71,13 @@ int	main(int argc, char **argv)
 			return (ft_free_args(argc + 1, &argv));
 		a = ft_args_to_intlst(argc, argv);
 		b = NULL;
-		if (PR)
-			ft_visualize_stacks(&a, &b);
-		ft_sort(&a, &b, argc - 1);
-		if (PR)
-			ft_visualize_stacks(&a, &b);
+		if (ft_check(&a, &b))
+		{
+			if (ft_intlst_issorted(a) && b == NULL)
+				ft_putstr_fd("\033[0;92mOK\n", 1);
+			else
+				ft_putstr_fd("\033[0;31mKO\n", 2);
+		}
 		ft_intlst_free(&a);
 		ft_intlst_free(&b);
 		ft_free_args(argc + 1, &argv);

@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/09 15:28:36 by isojo-go          #+#    #+#              #
-#    Updated: 2022/11/18 22:49:05 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/11/22 22:27:05 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC_FILES	=	ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c \
 				ft_str/ft_strlcpy.c ft_str/ft_strlen.c ft_str/ft_strmapi.c \
 				ft_str/ft_strncmp.c ft_str/ft_strnstr.c ft_str/ft_strrchr.c \
 				ft_str/ft_strtrim.c ft_str/ft_substr.c ft_str/ft_strcat.c \
+				ft_str/ft_strcmp.c \
 				ft_to/ft_abs.c ft_to/ft_atoi.c ft_to/ft_itoa.c ft_to/ft_max.c \
 				ft_to/ft_toupper.c ft_to/ft_tolower.c ft_to/ft_digitcount.c\
 				ft_printf/ft_printf.c \
@@ -63,7 +64,7 @@ OBJ	=	$(SRC:.c=.o)
 
 DEF_COLOR = \033[0;39m
 GRAY = \033[0;90m
-RED = \033[0;91m
+RED = \033[0;31m
 GREEN = \033[0;92m
 YELLOW = \033[0;93m
 BLUE = \033[0;94m
