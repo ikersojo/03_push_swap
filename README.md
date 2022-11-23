@@ -128,10 +128,35 @@ Additional / auxiliary features have been build to help check the behaviour of t
 ./random_nums_generator/random_nums <n off numbers desired>
 ```
 
+# Bonus
+The bonus program checks the user input of integers with the same strategy and functions as the main program. If any input error is identified prints "Error".
+Then requests input of the different instructions until **Crtl + D** is pressed.
+If any input error is identified prints "Error".
+Finally checks if a is sorted and b empty, providig an OK or KO, depending on the results.
+
 # Score
 TBD...
 
-NOTE: Bonus not submited.
+
 
 ## Scoring criteria (number of instructions)
 In addition to having the program fully functional and without errors, the following will be used to provide the final score:
+
+When sorting 100 numbers:
+- Less than 700:  5
+- Less than 900:  4
+- Less than 1100: 3
+- Less than 1300: 2
+- Less than 1500: 1
+
+When sorting 500 numbers:
+- Less than 5500:  5
+- Less than 7000:  4
+- Less than 8500:  3
+- Less than 10000: 2
+- Less than 11500: 1
+
+
+## Visualization:
+In addition to make print, the following program can be used to visualize the sorting steps:
+[push_swap_visualizer](https://github.com/opsec-infosec/push_swap_visualizer).
