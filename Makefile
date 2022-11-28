@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 16:19:35 by isojo-go          #+#    #+#              #
-#    Updated: 2022/11/22 19:22:44 by isojo-go         ###   ########.fr        #
+#    Updated: 2022/11/28 16:21:28 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(LIBFT):
 
 bonus:		$(LIBFT) $(OBJ) $(OBJ_B)
 			@$(CC) $(FLAGS) $(OBJ) $(OBJ_B) $(LIBFT) -I$(INC) -o checker
-			@echo "$(GREEN)makchecker compiled!$(DEF_COLOR)"
+			@echo "$(GREEN)checker compiled!$(DEF_COLOR)"
 
 print:		$(LIBFT) $(OBJ)
 			@$(CC) $(FLAGS) $(MAIN) -D PR=1 $(OBJ) $(LIBFT) -I$(INC) -o $(NAME)

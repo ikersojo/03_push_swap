@@ -135,9 +135,7 @@ If any input error is identified prints "Error".
 Finally checks if a is sorted and b empty, providig an OK or KO, depending on the results.
 
 # Score
-TBD...
-
-
+<img  width="300" src="https://github.com/ikersojo/03_push_swap/blob/main/img/score.png\?raw\=true">
 
 ## Scoring criteria (number of instructions)
 In addition to having the program fully functional and without errors, the following will be used to provide the final score:
